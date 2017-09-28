@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Insert Page</title>
+</head>
+<body>
+    <form ng-controller="formController" method="POST"/>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td><input type="text" name="nama" placeholder="Nama anda" id="nama" ng-model="nama"/></td>
+            </tr>
+            <tr>
+                <td>Alamat</td>
+                <td><input type="text" name="alamat" placeholder="Alamat anda" id="alamat" ng-model="alamat"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" style="width:100%;" value="Submit Data Person" ng-click="insertData()"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

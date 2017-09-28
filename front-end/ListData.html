@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List Data Page</title>
+</head>
+<body>
+    <table ng-controller="ListController" border="2">
+        <tr>
+            <td>Id</td>
+            <td>Nama</td>
+            <td>Alamat</td>
+            <td>Delete</td>
+        </tr>
+        <tr ng-repeat="j in json">
+            <td>{{j.id}}</td>
+            <td>{{j.nama}}</td>
+            <td>{{j.alamat}}</td>
+            <td style="padding: 10px;"><a href="" style="text-decoration: none; color:crimson;" ng-click="deleteData(j.id)">Delete</a></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Page</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+</head>
+<body ng-app="mainApp" ng-init="
+    menu=[{link:'#!/form',text:'Form Data'},{link:'#!/list',text:'List Data'}]">
+    <ul type="none">
+        <li ng-repeat="m in menu">
+            <a href="{{m.link}}">{{m.text}}</a>
+        </li>
+    </ul>
+
+    <div ng-view></div>
+
+</body>
+    <script>
+        var app = angular.module('mainApp',['ngRoute']);
+
+
+        app.config(function($routeProvider){
+           $routeProvider.
+
+           when('/form',{
+              templateUrl:"../front-end/FormInsert.html",
+              controller:"formController"
+           }).when('/list',{
+              templateUrl:"../front-end/ListData.html",
+              controller:"ListController"
+           });
+        });
+
+    </script>
+
+    <script src="../jscontrollers/FormInsert.js"></script>
+    <script src="../jscontrollers/ListController.js"></script>
+
+</html>
